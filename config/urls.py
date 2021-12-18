@@ -21,3 +21,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path("", homePageView, name="home"),
 ]
+
+MATCH(ra:Person), (m:Person)
+WHERE ra.Name = "Satya" AND m.name ="Natraj"
+CREATE (ra)-[cf:CLSFR]->(p) ,(ra)><-[:CLSFR]-(p), (ra)-[:CLSFR]->(m), (ra)<-[:CLSFR]-(m)
+RETURN ram
